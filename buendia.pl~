@@ -37,12 +37,12 @@ esPrimo(X, Y):- padre(Z, X),esTio(Z, Y).
 esAbuelo(X, Y):- padre(X,Z),padre(Z, Y).
 
 familiarde(A,B) :- padre(A,B).
+famaliarde(A,B) :- nieto(A,B).
 familiarde(A,B) :- esHermano(A,B).
 familiarde(A,B) :- esTio(A,B).
 familiarde(A,B) :- esPrimo(A,B).
 familiarde(A,B) :- esAbuelo(A,B).
-familiarde(A,B) :- nieto(A,B).
 
-familiaresDe(X,L):- findall(B,familiarde(X,B),L).
+familiaresDe(X,L):- finall(B,familiarde(X,B),L).
 
 

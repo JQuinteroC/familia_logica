@@ -35,3 +35,8 @@ abuelapaterna(X,Y):-padre(C,Y),-mujer(C),madre(X,C).
 bisabuelo(X,Y):-padre(X,C),(padre(C,Z);madre(C,Z)),(padre(Z,Y);madre(Z,Y)),-mujer(X).
 casados(X,Y):padre(X,Z),padre(Y,Z).
 felices(X):casados(X,Y).
+esHermano(X, Y): Padre(Z, X), Padre(Z, Y).
+esTio(X, Y): Padre(Z, Y), esHermano(Z, X).
+esPrimo(X, Y): Padre(Z, X), esTio(Z, Y).
+esAbuelo(X, Y): Padre (X, Z), Padre(Z, Y).
+
